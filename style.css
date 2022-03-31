@@ -56,3 +56,8 @@ hr {
   width: 50%;
   margin: 15px auto;
 }
+
+#rating {
+  display: flex;
+  margin: 5px;
+}
