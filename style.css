@@ -23,3 +23,18 @@ main {
 #trybewarts-forms-logo {
   height: 500px;
 }
+
+#block1 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.inputs {
+  flex-basis: 40%;
+  flex-grow: 1;
+}
+
+label {
+  padding: 0 10px;
+}
