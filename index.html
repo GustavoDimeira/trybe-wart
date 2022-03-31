@@ -18,7 +18,6 @@
             <input type="password" name="password" id="password" placeholder="Senha">
             <button id="entrar">Entrar</button>
         </form>
-
     </header>
     <main id='container'>
         <form action="" id="evaluation-form">
@@ -126,19 +125,21 @@
                 </div>
                 <div id="comment">
                     <label class="textarea">Deixe seu comentário:</label>
-                    <textarea name="" id="" cols="32" rows="10" maxlength="500"></textarea>
+                    <textarea name="" id="textarea" cols="32" rows="10" maxlength="500"></textarea>
+                    <span id='counter'>500</span>
                 </div>
                 <div id="aceita">
                     <label id="label-infos">Você concorda com o uso das informações acima?</label>
                     <input type="checkbox" name="" id="agreement">
                 </div>
-                <button id="submit-btn" type="submit">Enviar</button>
+                <button id="submit-btn" type="submit" disabled>Enviar</button>
             </div>
         </form>
         <div>
             <img src="images/trybewarts-colored.svg" alt="" id="trybewarts-forms-logo">
         </div>
     </main>
+    <footer>Direitos reservados à Trybewarts©</footer>
     <script src="script.js"></script>
 </body>
 
