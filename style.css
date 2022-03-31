@@ -35,6 +35,24 @@ main {
   flex-grow: 1;
 }
 
-label {
+#house {
   padding: 0 10px;
+}
+
+#block2 {
+  display: flex;
+  flex-flow: row;
+}
+
+#casas-familia {
+  flex-grow: 1;
+}
+
+#checkboxes {
+  flex-grow: 2;
+}
+
+hr {
+  width: 50%;
+  margin: 15px auto;
 }
