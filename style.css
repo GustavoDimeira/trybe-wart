@@ -61,3 +61,12 @@ hr {
   display: flex;
   margin: 5px;
 }
+
+#comment {
+  display: flex;
+  flex-flow: column;
+}
+
+textarea {
+  resize: none;
+}
