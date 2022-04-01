@@ -4,7 +4,34 @@ const password = document.getElementById('password');
 const enviar = document.getElementById('submit-btn');
 const area = document.getElementById('textarea');
 const counter = document.getElementById('counter');
-//21
+const nomeValor = document.getElementById('input-name');
+const sobrenomeValor = document.getElementById('input-lastname');
+const emailValor = document.getElementById('input-email');
+const select = document.getElementById('house');
+const frontEnd = document.getElementById('frontend');
+const backEnd = document.getElementById('backend');
+const fullStack = document.getElementById('fullStack');
+const subject1 = document.getElementsByClassName('subject')[0];
+const subject2 = document.getElementsByClassName('subject')[1];
+const subject3 = document.getElementsByClassName('subject')[2];
+const subject4 = document.getElementsByClassName('subject')[3];
+const subject5 = document.getElementsByClassName('subject')[4];
+const subject6 = document.getElementsByClassName('subject')[5];
+const subjects = [subject1, subject2, subject3, subject4, subject5, subject6];
+const valor1 = document.getElementById('valor1');
+const valor2 = document.getElementById('valor2');
+const valor3 = document.getElementById('valor3');
+const valor4 = document.getElementById('valor4');
+const valor5 = document.getElementById('valor5');
+const valor6 = document.getElementById('valor6');
+const valor7 = document.getElementById('valor7');
+const valor8 = document.getElementById('valor8');
+const valor9 = document.getElementById('valor9');
+const valor10 = document.getElementById('valor10');
+const valores = [valor1, valor2, valor3, valor4, valor5, valor6, valor7, valor8, valor9, valor10];
+const observation = document.getElementById('textarea');
+
+// 21
 const form = document.getElementById('evaluation-form');
 
 submitLog.addEventListener('click', () => {
@@ -27,102 +54,81 @@ area.addEventListener('keyup', () => {
   counter.innerText = 500 - area.value.length;
 });
 
-//21
-function addP(event) {
-  event.preventDefault()
-  //nome
-  const fullName = document.getElementById('input-name').value + ' ' + document.getElementById('input-lastname').value
+// 21
+// nome
+function insertNome() {
+  const fullName = `${nomeValor.value} ${sobrenomeValor.value}`;
   const pFullName = document.createElement('p');
-  pFullName.innerText = 'Nome: ' + fullName;
-  //email
-  const email = document.getElementById('input-email').value + ''
+  pFullName.innerText = `Nome: ${fullName}`;
+  form.appendChild(pFullName);
+}
+// email
+function insertEmail() {
   const pEmail = document.createElement('p');
-  pEmail.innerText = 'Email: ' + email;
-  //casa
-  const select = document.getElementById('house');
+  pEmail.innerText = `Email: ${emailValor.value}`;
+  form.appendChild(pEmail);
+}
+// casa
+function insertCasa() {
   const house = select.options[select.selectedIndex].text;
   const pHouse = document.createElement('p');
-  pHouse.innerText = 'Casa: ' + house;
-  //familia
+  pHouse.innerText = `Casa: ${house}`;
+  form.appendChild(pHouse);
+}
+// familia
+function insertFamily() {
   const pFamily = document.createElement('p');
-  if (document.getElementById('frontend').checked) {
-    pFamily.innerText = 'Família: Frontend'
-  } else if (document.getElementById('backend').checked) {
-    pFamily.innerText = 'Família: Backend'
-  } else if (document.getElementById('fullStack').checked) {
-    pFamily.innerText = 'Família: FullStack'
+  if (frontEnd.checked) {
+    pFamily.innerText = 'Família: Frontend';
+  } else if (backEnd.checked) {
+    pFamily.innerText = 'Família: Backend';
+  } else if (fullStack.checked) {
+    pFamily.innerText = 'Família: FullStack';
   } else {
     pFamily.innerText = 'Família: ';
   }
-  //matérias incompleto
-  let pSubject = document.createElement('p');
-  pSubject.innerText = "Matérias: "
-  if (document.getElementsByClassName('subject')[0].checked) {
-    pSubject.innerText += "HoFs";
-  };
-  if (document.getElementsByClassName('subject')[1].checked && pSubject.innerText.length > 10) {
-    pSubject.innerText += ", Jest";
-  } else if(document.getElementsByClassName('subject')[1].checked && pSubject.innerText.length == 10){
-    pSubject.innerText += "Jest";
-  };
-  if (document.getElementsByClassName('subject')[2].checked && pSubject.innerText.length > 10) {
-    pSubject.innerText += ", Promises";
-  } else if(document.getElementsByClassName('subject')[2].checked && pSubject.innerText.length == 10){
-    pSubject.innerText += "Promises";
-  };
-  if (document.getElementsByClassName('subject')[3].checked && pSubject.innerText.length > 10) {
-    pSubject.innerText += ", React";
-  } else if(document.getElementsByClassName('subject')[3].checked && pSubject.innerText.length == 10){
-    pSubject.innerText += "React";
-  };
-  if (document.getElementsByClassName('subject')[4].checked && pSubject.innerText.length > 10) {
-    pSubject.innerText += ", SQL";
-  } else if(document.getElementsByClassName('subject')[4].checked && pSubject.innerText.length == 10){
-    pSubject.innerText += "SQL";
-  };
-  if (document.getElementsByClassName('subject')[5].checked && pSubject.innerText.length > 10) {
-    pSubject.innerText += ", Python";
-  } else if(document.getElementsByClassName('subject')[5].checked && pSubject.innerText.length == 10){
-    pSubject.innerText += "Python";
-  };
-  //avaliação
-  const pAvaliation = document.createElement('p');
-  if (document.getElementById('valor1').checked) {
-    pAvaliation.innerText = 'Avaliação: 1'
-  } else if (document.getElementById('valor2').checked) {
-    pAvaliation.innerText = 'Avaliação: 2'
-  } else if (document.getElementById('valor3').checked) {
-    pAvaliation.innerText = 'Avaliação: 3'
-  } else if (document.getElementById('valor4').checked) {
-    pAvaliation.innerText = 'Avaliação: 4'
-  } else if (document.getElementById('valor5').checked) {
-    pAvaliation.innerText = 'Avaliação: 5'
-  } else if (document.getElementById('valor6').checked) {
-    pAvaliation.innerText = 'Avaliação: 6'
-  } else if (document.getElementById('valor7').checked) {
-    pAvaliation.innerText = 'Avaliação: 7'
-  } else if (document.getElementById('valor8').checked) {
-    pAvaliation.innerText = 'Avaliação: 8'
-  } else if (document.getElementById('valor9').checked) {
-    pAvaliation.innerText = 'Avaliação: 9'
-  } else if (document.getElementById('valor10').checked) {
-    pAvaliation.innerText = 'Avaliação: 10'
-  } else {
-    pAvaliation.innerText = 'Avaliação: '
-  }
-  //observações
-  const observation = document.getElementById('textarea').value;
-  const pObservation = document.createElement('p');
-  pObservation.innerText = 'Observações: ' + observation;
-
-  form.innerHTML = '';
-  form.appendChild(pFullName);
-  form.appendChild(pEmail);
-  form.appendChild(pHouse);
   form.appendChild(pFamily);
-  form.appendChild(pSubject);
-  form.appendChild(pAvaliation);
-  form.appendChild(pObservation);
-  console.log(pAvaliation);
 }
-enviar.addEventListener('click', addP);
+// matérias incompleto
+function insertSubjects() {
+  const pSubject = document.createElement('p');
+  pSubject.innerText = 'Matérias: ';
+
+  for (let i = 0; i < subjects.length; i += 1) {
+    if (subjects[i].checked) {
+      pSubject.innerText += `${subjects[i].value}, `;
+    }
+  }
+  form.appendChild(pSubject);
+}
+// avaliação
+function insertAvaliation() {
+  const pAvaliation = document.createElement('p');
+  for (let i = 0; i < valores.length; i += 1) {
+    if (valores[i].checked) {
+      pAvaliation.innerText = `Avaliação: ${i + 1}`;
+    } else {
+      pAvaliation.innerText = 'Avaliação: ';
+    }
+  }
+  form.appendChild(pAvaliation);
+}
+// observações
+function insertObservation() {
+  const pObservation = document.createElement('p');
+  pObservation.innerText = `Observações: ${observation.value}`;
+  form.appendChild(pObservation);
+}
+
+enviar.addEventListener('click', (event) => {
+  event.preventDefault();
+  form.innerHTML = '';
+
+  insertNome();
+  insertEmail();
+  insertCasa();
+  insertFamily();
+  insertSubjects();
+  insertAvaliation();
+  insertObservation();
+});
