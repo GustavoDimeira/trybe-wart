@@ -89,7 +89,7 @@ function insertFamily() {
   }
   form.appendChild(pFamily);
 }
-// matérias incompleto
+// matérias
 function insertSubjects() {
   const pSubject = document.createElement('p');
   pSubject.innerText = 'Matérias: ';
@@ -107,8 +107,6 @@ function insertAvaliation() {
   for (let i = 0; i < valores.length; i += 1) {
     if (valores[i].checked) {
       pAvaliation.innerText = `Avaliação: ${i + 1}`;
-    } else {
-      pAvaliation.innerText = 'Avaliação: ';
     }
   }
   form.appendChild(pAvaliation);

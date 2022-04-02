@@ -1,8 +1,13 @@
+html {
+  background-color: rgb(241, 241, 241);
+}
+
 header {
   display: flex;
   justify-content: space-between;
   background-color: rgb(50, 167, 145);
   padding: 0 20px;
+  color: white;
 }
 
 .trybewarts-login {
@@ -10,8 +15,14 @@ header {
   align-items: center;
 }
 
+.spacing {
+  padding: 5px;
+  margin: 10px;
+}
+
 main {
   display: flex;
+  justify-content: space-evenly;
 }
 
 #evaluation-form {
@@ -22,6 +33,7 @@ main {
 
 #trybewarts-forms-logo {
   height: 500px;
+  display: flex;
 }
 
 #block1 {
@@ -69,4 +81,33 @@ hr {
 
 textarea {
   resize: none;
+}
+
+p , .center {
+  text-align: center;
+}
+
+.trybewarts-header-logo {
+  padding-top: 7px;
+}
+
+.gambiarra {
+  width: 60%;
+}
+
+input , select {
+  background-color: white;
+  border: rgb(206, 206, 206) solid 1px;
+  border-radius: 5px;
+  padding: 5px 2px;
+}
+
+button {
+  list-style: none;
+  background-color: rgb(134, 31, 134);
+  color: white;
+  border-radius: 5px;
+  border: gray solid 1px;
+  padding: 10px 40%;
+  margin-left: 5%;
 }
